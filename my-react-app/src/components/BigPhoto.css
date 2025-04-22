@@ -1,0 +1,107 @@
+.big-photo-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+
+}
+
+.big-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* or 'cover' based on your needs */
+  border-radius: 8px;
+}
+  
+  .nav-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: skyblue;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    background-color: #5bc0de;
+    transform: scale(1.1);
+  }
+  
+  .camera-icon {
+    font-size: 18px;
+  }
+  
+  .up {
+    top: 100px;
+    left: 47%;
+
+  }
+
+  .upleft {
+    top: 18px;
+    left: 38%;
+
+  }
+  
+  .up:before {
+    border-width: 0 10px 15px 10px;
+    border-color: transparent transparent white transparent;
+    top: 12px;
+  }
+  
+  .down {
+    bottom: 65px;
+    left: 45%;
+
+  }
+
+  .downleft {
+    bottom: 20px;
+    left: 60%;
+
+  }
+
+  .downdown {
+    bottom: 19px;
+    left: 34%;
+
+  }
+  
+  .down:before {
+    border-width: 15px 10px 0 10px;
+    border-color: white transparent transparent transparent;
+    top: 8px;
+  }
+  
+  .left {
+    left: 50px;
+    top: 50%;
+
+  }
+  
+  .left:before {
+    border-width: 10px 15px 10px 0;
+    border-color: transparent white transparent transparent;
+    left: 12px;
+  }
+  
+  .right {
+    right: 80px;
+    top: 40%;
+
+  }
+  
+  .right:before {
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent white;
+    left: 8px;
+  }

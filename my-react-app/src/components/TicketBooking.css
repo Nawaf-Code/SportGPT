@@ -1,0 +1,186 @@
+.ticket-booking {
+  flex: 1;
+  max-width: 600px;
+
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.match-info {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 45px;
+
+}
+  
+.match-photo {
+
+  margin: 0 0 10px 0;
+  width: 320;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.match-details{
+  background-color: white;
+  margin: 0;
+  
+}
+  
+  .match-details h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+  }
+  
+  .match-details p {
+
+
+    font-size: 14px;
+  }
+  
+  .booking-options {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .toggle-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #007bff;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .ticket-list h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+/* Add to your existing TicketBooking.css */
+
+/* Add to your existing TicketBooking.css */
+
+.ticket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.ticket-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.color-square {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.category-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.price-row {
+  color: #007bff;
+  font-size: 14px;
+  padding-left: 24px; /* Align with category name */
+}
+
+.buy-btn {
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: flex-start; /* Align button with top content */
+}
+
+.buy-btn:hover {
+  background-color: #218838;
+}
