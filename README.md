@@ -20,12 +20,9 @@ A cutting-edge solution leveraging **Augmented Reality (AR), Virtual Reality (VR
 - Expand revenue streams through virtual tickets and digital advertising.
 
 ## Team
+- Nawaf Alzwaimel 
 - Saleh AlSaleem  
 - Alanoud AlMutairi  
-- Khalifah Alzwaimel  
-- Nawaf Alzwaimel  
+- Khalifah Alzwaimel 
 
----
 
-**Strategic Partners**: COOP, Adult digits, SDMA, Globals/Liquids  
-**Execution Partner**: Human Solutions  
