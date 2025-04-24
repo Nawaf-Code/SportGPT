@@ -5,6 +5,7 @@ const TicketBooking = ({ currency, onBuyTicket }) => {
   const [ticketCount, setTicketCount] = useState(1);
   const [seatCategory, setSeatCategory] = useState('Gold');
   const [toggleStatus, setToggleStatus] = useState(false);
+  const [notification, setNotification] = useState(null);
 
   const categories = [
     { name: 'Gold', price: currency === 'USD' ? 375 : 100, seatId: "204A" , color: "#efba19"},
@@ -25,7 +26,14 @@ const TicketBooking = ({ currency, onBuyTicket }) => {
       seat_id: category.seatId
     };
     onBuyTicket(ticket);
+
+    setNotification(`Successfully purchased ${category.name} ticket!`);
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000);
   };
+
+  
 
   return (
     <div className="ticket-booking">
@@ -71,7 +79,11 @@ const TicketBooking = ({ currency, onBuyTicket }) => {
           </label>
         </div>
       </div>
-
+      {notification && (
+        <div className="notification">
+          {notification}
+        </div>
+      )}
       <div className="ticket-list">
         <h3>Available Tickets</h3>
         {categories.map(category => (

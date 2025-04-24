@@ -13,3 +13,20 @@
     flex-direction: column;
   }
 }
+
+
+/* Add this to your main CSS file */
+.login-btn, 
+.buy-btn, .back-btn,
+.back-btn-chat, .profile-btn {
+  background-color: #3763DA !important;
+  border-color: #3763DA !important;
+}
+
+.login-btn:hover, 
+.buy-btn:hover, .profile-btn,
+.back-btn-chat:hover {
+  background-color: #2a52c7 !important;
+  border-color: #2a52c7 !important;
+}
+

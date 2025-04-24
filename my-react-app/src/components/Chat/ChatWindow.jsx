@@ -1,19 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ThreeDot } from "react-loading-indicators";
 import './ChatWindow.css';
+
 const ChatPage = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [typingProgress, setTypingProgress] = useState(0);
   const messagesEndRef = useRef(null);
   const navigate = useNavigate();
-  const [set_id, setSetId] = useState('B12345');
-
+  const [set_id, setSetId] = useState('D1023');
 
   // Initial greeting from SportGPT
   useEffect(() => {
     setMessages([{
-      text: "مرحبا نواف! انا سبورت جي بي تي اسألني اي شي يخص المباراة، اللاعبين او حتى لو احصائيات",
+      text: "Hello Nawaf! I'm SportGPT. Ask me anything about the match, the players, or even statistics",
       sender: 'bot'
     }]);
   }, []);
@@ -22,6 +24,19 @@ const ChatPage = () => {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Typing animation effect
+  useEffect(() => {
+    let interval;
+    if (isTyping) {
+      interval = setInterval(() => {
+        setTypingProgress(prev => (prev >= 100 ? 0 : prev + 10));
+      }, 300);
+    } else {
+      setTypingProgress(0);
+    }
+    return () => clearInterval(interval);
+  }, [isTyping]);
 
   const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
@@ -38,7 +53,6 @@ const ChatPage = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-
         },
         body: JSON.stringify({ 
           message: inputMessage,
@@ -48,7 +62,6 @@ const ChatPage = () => {
       });
       
       const data = await response.json();
-      console.log('data', data)
       setMessages(prev => [...prev, { 
         text: data.response, 
         sender: 'bot',
@@ -74,7 +87,6 @@ const ChatPage = () => {
 
   return (
     <div className="chat-page">
-
       <button className="back-btn-chat" onClick={() => navigate('/')}>
         &larr; Back to Booking
       </button>      
@@ -85,19 +97,23 @@ const ChatPage = () => {
         </div>
         
         <div className="messages">
-        {messages.map((message, index) => (
-  <div key={index} className={`message ${message.sender}`}>
-    <div className="message-content">
-      <div className="message-text">{message.text}</div>
-    </div>
-  </div>
-))}
+          {messages.map((message, index) => (
+            <div key={index} className={`message ${message.sender}`}>
+              <div className="message-content">
+                <div className="message-text">{message.text}</div>
+              </div>
+            </div>
+          ))}
           {isTyping && (
             <div className="message bot">
               <div className="typing-indicator">
-                <span></span>
-                <span></span>
-                <span></span>
+
+              <ThreeDot color="#3763DA" size="small" text="" textColor="" />
+              <div>
+
+              </div>
+
+                <span className='textloding'>SportGPT is typing...</span>
               </div>
             </div>
           )}
@@ -114,6 +130,7 @@ const ChatPage = () => {
             disabled={isTyping}
           />
           <button 
+
             onClick={handleSendMessage}
             disabled={!inputMessage.trim() || isTyping}
           >
